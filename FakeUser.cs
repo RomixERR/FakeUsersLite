@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FakeUsersLite
 {
-    internal class FakeUser : FakeUserDataset
+    internal class FakeUser : FakeUserDatasetENG
     {
         public enum Egender
         { 

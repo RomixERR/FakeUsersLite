@@ -13,13 +13,9 @@ namespace FakeUsersLite
             FakeUser fakeUser = new FakeUser(FakeUser.Egender.Female);
             for (int i = 0; i < 50; i++)
             {
-                
-                Console.WriteLine(fakeUser.GetPasport());
+                Console.WriteLine($"Name:\t{fakeUser.GetFullName(),-35}\tPhone:\t{fakeUser.GetPhone()}\tPasport:\t{fakeUser.GetPasport()}");
             }
             Console.ReadKey();
-
-
-
         }
     }
 }
