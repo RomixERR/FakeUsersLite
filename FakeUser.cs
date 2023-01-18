@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace FakeUsersLite
 {
-    internal class FakeUser : FakeUserDatasetENG
+    internal class FakeUser : FakeUserDatasetRUS
     {
         public enum Egender
         { 
             Male,
             Female,
-            Horse
+            Thing,
+            Animal
         }
         Random r = new Random();
         public Egender Gender { get; set; }
@@ -34,11 +35,21 @@ namespace FakeUsersLite
             string S,S2;
             if (Gender == Egender.Male)
             {
-                S = Cutter(NamesFMale,4, 7);
-            }else
+                S = Cutter(NamesFMale,4, 11);
+            }else if (Gender == Egender.Female)
             {
-                S = Cutter(NamesFFemale, 4, 7);
+                S = Cutter(NamesFFemale, 4, 11);
+            } else if (Gender == Egender.Animal)
+            {
+                S = Cutter(NamesFAnimal, 4, 11);
             }
+            else
+            {
+                S = Cutter(NamesFThing, 4, 11);
+            }
+
+
+
             S2 = S.Substring(0, 1).ToUpper();
             return S.Insert(0, S2).Remove(1,1);
         }
@@ -111,8 +122,15 @@ namespace FakeUsersLite
             }
             return S;
         }
+        public int GetAgeInt(int min, int max)
+        {
+            return r.Next(min, max + 1);
+        }
+        public string GetAge(int min, int max)
+        {
+            return GetAgeInt(min,max).ToString();
+        }
 
- 
 
 
     }
