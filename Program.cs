@@ -14,7 +14,7 @@ namespace FakeUsersLite
             Console.WriteLine("Имена и данные людей (женские):");
             for (int i = 0; i < 6; i++)
             {
-                Console.WriteLine($"Name:\t{fakeUser.GetFullName(),-35}\tPhone:\t{fakeUser.GetPhone()}\tPasport:\t{fakeUser.GetPasport()}");
+                Console.WriteLine($"Name:\t{fakeUser.GetFullName(),-35}\tPhone:\t{fakeUser.GetPhone()}\tPasport:\t{fakeUser.GetPasport()}\tEmail:\t{fakeUser.GetEmail()}");
             }
             Console.WriteLine();
 
@@ -34,6 +34,13 @@ namespace FakeUsersLite
             {
                 Console.Write($"{fakeUser.GetFName(),-12}\t\t");
                 if (i % 5 == 0) Console.WriteLine();
+            }
+
+            Console.WriteLine("Emails:");
+            List<string> listEmails = fakeUser.GetEmails(10);
+            foreach (var item in listEmails)
+            {
+                Console.WriteLine(item);
             }
 
             Console.ReadKey();

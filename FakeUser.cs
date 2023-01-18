@@ -130,6 +130,44 @@ namespace FakeUsersLite
         {
             return GetAgeInt(min,max).ToString();
         }
+        public char GetRandomChar()
+        {
+            var index = r.Next(SymbolsForInternet.Length);
+            return SymbolsForInternet[index];
+        }
+        public string GetRandomString(int min,int max)
+        {
+            string s = "";
+            int amount = r.Next(min, max+1);
+            for (int i = 0; i < amount; i++)
+            {
+                s += GetRandomChar();
+            }
+            return s;
+        }
+        public string GetEmail()
+        {
+            string d="", m="";
+            m = DomensMail[r.Next(0, DomensMail.Length)];
+            d = DomensInternet[r.Next(0, DomensInternet.Length)];
+            return $"{GetRandomString(5,10)}@{m}.{d}";
+        }
+        public List<string> GetEmails(int amount)
+        {
+            List<string> list = new List<string>();
+            string s;
+
+            for (int i = 0; i < amount; i++)
+            {
+                while (true)
+                {
+                    s = GetEmail();
+                    if (!list.Contains(s)) break;
+                }
+                list.Add(s);
+            }
+            return list;
+        }
 
 
 

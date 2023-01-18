@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FakeUsersLite
 {
-    internal abstract class FakeUserDatasetRUS
+    internal abstract class FakeUserDatasetRUS: FakeUsersDataset
     {
         protected static string NamesFMale = "игорегорвадимойшалексемёниколаропукитемишантолегригоша";
         protected static string NamesFFemale = "евалисангелиннадеждарьядуняшамашаленаолялякатянкотятка";
@@ -20,7 +20,7 @@ namespace FakeUsersLite
         protected static string NamesM = "игорегорвадимойшалексемёниколартемишантолегригошапетрярикольгоалександрстанислав";
     }
 
-    internal abstract class FakeUserDatasetENG
+    internal abstract class FakeUserDatasetENG: FakeUsersDataset
     { 
     protected static string NamesFMale = "igoregorvadimojshaleksemyonikolaropukitemishantolegrigosha";
     protected static string NamesFFemale = "evalisangelinnadezhdaryadunyashamashalenaolyalyakatyankotyatka";
@@ -32,6 +32,13 @@ namespace FakeUsersLite
     protected static string[] NamesMEndsMale = { "vich" };
     protected static string[] NamesMEndsFeMale = { "vna" };
     protected static string NamesM = "igoregorvadimojshaleksemyonikolartemishantolegrigoshapetryarikolgoaleksandrstanislav";
+    }
+
+    internal abstract class FakeUsersDataset
+    {
+        protected static string SymbolsForInternet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_____00001111222233334455667777889999";
+        protected static string[] DomensInternet = {"com","ru","net"};
+        protected static string[] DomensMail = { "mail", "gmail", "yandex" };
     }
 
 }
